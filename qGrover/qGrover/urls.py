@@ -19,5 +19,6 @@ import qGroverApp.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio, name="Inicio")
+    path('', views.inicio, name="Inicio"),
+    path('demo/', views.demo, name="Demo")
 ]
