@@ -37,25 +37,27 @@ Thanks to the [support staff](https://github.com/oierajenjo/q-Grover-Algorithm/b
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table align="center">
-  <tr>
-    <td align="center"><a href="https://github.com/oierajenjo">
-        <img src="https://avatars1.githubusercontent.com/u/25632727?s=400&v=4"
-        width="150px;" alt="Oier Ajenjo"/><br/><sub><b>Oier Ajenjo</b></sub></a><br/></td>
-    <td align="center"><a href="https://github.com/carloslago">
-        <img src="https://avatars2.githubusercontent.com/u/15263623?s=400&v=4" 
-        width="150px;" alt="Carlos Lago"/><br/><sub><b>Carlos Lago</b></sub></a><br/></td>
-    <td align="center"><a href="https://github.com/AlbertoMGV">
-        <img src="https://avatars2.githubusercontent.com/u/31722793?s=400&v=4"
-        width="150px;" alt="Alberto Miranda"/><br/><sub><b>Alberto Miranda</b></sub></a><br/></td>
-    <td align="center"><a href="https://github.com/aitormorais">
-        <img src="https://avatars3.githubusercontent.com/u/43671531?s=400&v=4"
-         width="150px;" alt="Aitor Morais"/><br/><sub><b>Aitor Morais</b></sub></a><br/></td>
-    <td align="center"><a href="https://github.com/rafaelromon">
-        <img src="https://avatars0.githubusercontent.com/u/15263554?s=400&v=4" 
-        width="150px;" alt="Rafael Romón"/><br /><sub><b>Rafael Romón</b></sub></a><br/></td>
-  </tr>
-</table>
+<div align="center">
+    <table align="center">
+      <tr>
+        <td align="center"><a href="https://github.com/oierajenjo">
+            <img src="https://avatars1.githubusercontent.com/u/25632727?s=400&v=4"
+            width="150px;" alt="Oier Ajenjo"/><br/><sub><b>Oier Ajenjo</b></sub></a><br/></td>
+        <td align="center"><a href="https://github.com/carloslago">
+            <img src="https://avatars2.githubusercontent.com/u/15263623?s=400&v=4" 
+            width="150px;" alt="Carlos Lago"/><br/><sub><b>Carlos Lago</b></sub></a><br/></td>
+        <td align="center"><a href="https://github.com/AlbertoMGV">
+            <img src="https://avatars2.githubusercontent.com/u/31722793?s=400&v=4"
+            width="150px;" alt="Alberto Miranda"/><br/><sub><b>Alberto Miranda</b></sub></a><br/></td>
+        <td align="center"><a href="https://github.com/aitormorais">
+            <img src="https://avatars3.githubusercontent.com/u/43671531?s=400&v=4"
+             width="150px;" alt="Aitor Morais"/><br/><sub><b>Aitor Morais</b></sub></a><br/></td>
+        <td align="center"><a href="https://github.com/rafaelromon">
+            <img src="https://avatars0.githubusercontent.com/u/15263554?s=400&v=4" 
+            width="150px;" alt="Rafael Romón"/><br /><sub><b>Rafael Romón</b></sub></a><br/></td>
+      </tr>
+    </table>
+</div>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
@@ -113,20 +115,22 @@ the answer to your questions as we did this in a Hackathon and we are not .
 
 
 ## Acknowledgements
+<div align="center">
+    <table align="center">
+      <tr>
+        <td align="center"><a href="https://github.com/VicPinaCanelles">
+            <img src="https://avatars0.githubusercontent.com/u/55274463?s=400&v=4"
+            width="100px;" alt="Vic Pina"/><br/><sub><b>Vic Pina</b></sub></a><br/></td>
+        <td align="center"><a href="https://github.com/amartinfer">
+            <img src="https://avatars1.githubusercontent.com/u/7209496?s=400&v=4" 
+            width="100px;" alt="Ana Martín"/><br/><sub><b>Ana Martín</b></sub></a><br/></td>
+        <td align="center"><a href="https://www.researchgate.net/profile/Giancarlo_Gatti">
+            <img src="https://i1.rgstatic.net/ii/profile.image/784553258012674-1564063481856_Q512/Giancarlo_Gatti.jpg"
+            width="100px;" alt="Giancarlo Gatti"/><br/><sub><b>Giancarlo Gatti</b></sub></a><br/></td>
+      </tr>
+    </table>
+</div>
 
-<table align="center">
-  <tr>
-    <td align="center"><a href="https://github.com/VicPinaCanelles">
-        <img src="https://avatars0.githubusercontent.com/u/55274463?s=400&v=4"
-        width="100px;" alt="Vic Pina"/><br/><sub><b>Vic Pina</b></sub></a><br/></td>
-    <td align="center"><a href="https://github.com/amartinfer">
-        <img src="https://avatars1.githubusercontent.com/u/7209496?s=400&v=4" 
-        width="100px;" alt="Ana Martín"/><br/><sub><b>Ana Martín</b></sub></a><br/></td>
-    <td align="center"><a href="https://www.researchgate.net/profile/Giancarlo_Gatti">
-        <img src="https://i1.rgstatic.net/ii/profile.image/784553258012674-1564063481856_Q512/Giancarlo_Gatti.jpg"
-        width="100px;" alt="Giancarlo Gatti"/><br/><sub><b>Giancarlo Gatti</b></sub></a><br/></td>
-  </tr>
-</table>
 
 ## Credits
 
