@@ -2,6 +2,8 @@
 
 {% block title %} Demo {% endblock title %}
 
+{% load static %}
+
 {% block stylesheets %}
     {{ block.super }}
 {% endblock stylesheets %}
@@ -82,8 +84,11 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjfy4u1_qnmAhWh6uAKHQT1AEQQjRx6BAgBEAQ&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ABLANK_ICON.png&psig=AOvVaw2cpNSkwCTaErzW3j-UyZBA&ust=1576029733845821"
+
+                        <img style="display: block; margin-left: auto;margin-right: auto;"
+                             src="{% static "/img/blank.png" %}"
                              id="img-chart" alt="Chart">
+
                     </div>
                 </div>
             </div>
@@ -101,7 +106,7 @@
 
             var oracle = document.getElementById("oracle").value;
 
-            if (oracle>= qubits) {
+            if (oracle >= qubits) {
                 alert("El valor de oracle debe ser menor que el de qubits");
             } else {
                 $('#img-chart').attr('src', '{% url "ajax_bar_chart" %}?oracle=' + oracle + '&qubics=' + qubits);
