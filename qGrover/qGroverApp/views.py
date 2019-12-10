@@ -1,6 +1,5 @@
 import io
 
-import plotly as plotly
 from django.http import HttpResponse
 from django.shortcuts import render
 from collections import OrderedDict
@@ -47,10 +46,15 @@ def ajax_bar_chart(request):
         values = ordered_answer.values()
 
         x = np.arange(len(values))
-
+        index = list(values).index(max(list(values)))
+        keys_list = list(keys)
+        for i in range(len(keys_list)):
+            if i!=index: keys_list[i]=""
         fig, ax = plt.subplots()
         plt.bar(x, values)
-        plt.xticks(x, keys)
+        plt.ylabel("Probabilidad")
+        plt.xlabel("")
+        plt.xticks(x, keys_list)
 
         svg = functions.pltToSvg()  # convert plot to SVG
         plt.cla()  # clean up plt so it can be re-used

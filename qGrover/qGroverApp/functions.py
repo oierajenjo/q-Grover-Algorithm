@@ -34,8 +34,10 @@ def define_circuit(num_qbits, oracle=0):
 
     # Inversión de la media
 
+    round_up = [4, 7, 8]  # En estos casos de qbits se obtiene un mejor resultado redondeando para arriba
     result = math.pi * math.sqrt((2 ** num_qbits)) / 4
-    iterations = round(result) + 1
+    iterations = round(result)
+    if num_qbits in round_up: iterations += 1
 
     for i in range(iterations - 1):  # pi * ((2^n)^(1/2))/ 4
         groverCircuit.barrier(qr)
@@ -58,8 +60,6 @@ def define_circuit(num_qbits, oracle=0):
     answer = results.get_counts()
     for k in answer.keys():
         answer[k] = answer[k] / shots
-
-    print(answer)
 
     return answer
 

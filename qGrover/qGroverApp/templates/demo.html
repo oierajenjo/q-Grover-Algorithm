@@ -42,7 +42,7 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align"
                                            for="qubits">Qubits</label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="number" id="qubits" min="1" max="9" value="4" required="required"
+                                        <input type="number" id="qubits" min="2" max="9" value="4" required="required"
                                                class="form-control ">
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="oracle">Definición
                                         Oraculo</label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="number" id="oracle" min="1" max="9" value="4" required="required"
+                                        <input type="number" id="oracle" min="0" max="8" value="3" required="required"
                                                class="form-control ">
                                     </div>
                                 </div>
@@ -101,8 +101,12 @@
 
             var oracle = document.getElementById("oracle").value;
 
+            if (oracle>= qubits) {
+                alert("El valor de oracle debe ser menor que el de qubits");
+            } else {
+                $('#img-chart').attr('src', '{% url "ajax_bar_chart" %}?oracle=' + oracle + '&qubics=' + qubits);
+            }
 
-            $('#img-chart').attr('src', '{% url "ajax_bar_chart" %}?oracle=' + oracle + '&qubics=' + qubits);
         }
     </script>
     {{ block.super }}
