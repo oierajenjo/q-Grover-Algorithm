@@ -69,4 +69,3 @@ def pltToSvg():
     s = buf.getvalue()
     buf.close()
     return s
-
