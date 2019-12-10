@@ -2,40 +2,41 @@
 
 [![License: Apache][license-shield]][license-url]
 
-*Read this in other languages: [English](README.md), [Spanish](README.es.md).*
+*Lea esto en otros idiomas: [Inglés](README.md), [Castellano](README.es.md).*
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Tabla de Contenidos
 
-* [About the Project](#about-the-project)
-  * [Built With](#built-with)
-* [Contributors](#contributors)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-* [Credits](#credits)
+* [Sobre el proyecto](#sobre-el-proyecto)
+  * [Construido con](#construido-con)
+* [Colaboradores](#colaboradores)
+* [Cómo empezar](#cmo-empezar)
+  * [Prerrequisitos](#prerrequisitos)
+  * [Instalación](#instalacin)
+* [Uso](#uso)
+* [Contribuyendo](#contribuyendo)
+* [Licencia](#licencia)
+* [Contacto](#contacto)
+* [Agradecimientos](#agradecimientos)
+* [Créditos](#crditos)
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre el proyecto
 
-Development and testing project on the performance of Grover's algorithm compared to other search algorithms.
+Proyecto de desarrollo y pruebas sobre el rendimiento del algoritmo de Grover
+en comparación con otros algoritmos de búsqueda.
 
-### Built With
+### Construido con
 * [Qiskit](https://qiskit.org/)
 * [Python](https://www.python.org/)
 * [Django](https://www.djangoproject.com/)
 
 <!-- CONTRIBUTORS -->
-## Contributors
+## Colaboradores
 
-Thanks to the [support staff](#acknowledgements) that helped with the theoretical content and with Qiskit language:
+Gracias al [personal de apoyo](#agradecimientos) que ayudó con el contenido teórico y con el lenguaje de Qiskit:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
@@ -62,28 +63,28 @@ Thanks to the [support staff](#acknowledgements) that helped with the theoretica
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Cómo empezar
 
-To get a local copy up and running follow these simple example steps:
+Para obtener una copia local en funcionamiento, siga estos sencillos pasos de ejemplo:
 
-### Prerequisites
+### Prerrequisitos
 * python3
 * python3-dev
 #### Windows
-Download and install Python from this [link](https://www.python.org/downloads/windows/)
+Descargue e instale Python desde este [enlace](https://www.python.org/downloads/windows/)
 #### Linux
 ```sh
 sudo apt install python3 python3-dev
 ```
 
-### Installation
+### Instalación
 
-1. Clone the repository
+1. Clonar el repositorio
 ```sh
 git clone https://github.com/oierajenjo/q-Grover-Algorithm
 ```
 
-2. Install Python packages
+2. Instalar paquetes de Python
 #### Windows
 ```sh
 pip install -r requirements.txt
@@ -93,39 +94,40 @@ pip install -r requirements.txt
 sudo pip3 install -r requirements.txt
 ```
 
-3. You may need to configure additional settings in the settings.py file like db or localizations.
+3. Es posible que necesite configurar ajustes adicionales en el archivo settings.py como db o localizaciones.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Uso
 
-You can run this site as a normal Django app.
+Puede ejecutar este sitio como una aplicación normal de Django.
 
-_For more information, please refer to the [Offical Documentation](https://www.djangoproject.com/start/)_
+_Para más información, consulte la [Documentación Oficial](https://www.djangoproject.com/start/)_
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Contribuyendo
 
-Feel free to open pull requests with new features or bug fixes. Any contributions you make are **greatly appreciated**.
+Siéntase libre de abrir solicitudes pull con nuevas características o correcciones de errores. 
+Cualquier contribución que usted haga será muy apreciada.
 
-As the license states, you can fork and even redistribute this as long as it remains as a GPL project. 
+Como dice la licencia, puedes hacer un fork e incluso redistribuirse mientras siga siendo un proyecto GPL. 
 
 
 <!-- LICENSE -->
-## License
+## Licencia
 
-Distributed under the Apache License. See [`LICENSE`](LICENSE) for more information.
-
+Distribuido bajo la licencia Apache. Vea [`LICENCIA`](LICENSE) para más información.
 
 <!-- CONTACT -->
-## Contact
+## Contacto
 
-If you are not that tech savvy feel free to ask us any questions via email, just keep in mind we might not know 
-the answer to your questions as we did this in a Hackathon and we are not experts in this area.
+Si usted no es tan experto en tecnología, siéntase libre de hacernos cualquier pregunta por correo electrónico, 
+sólo tenga en cuenta que es posible que no sepamos la respuesta a sus preguntas, ya que lo hicimos en un Hackathon 
+y no somos expertos en este área.
 
 
-## Acknowledgements
+## Agradecimientos
 
 <table align="center">
   <tr>
@@ -142,9 +144,9 @@ the answer to your questions as we did this in a Hackathon and we are not expert
 </table>
 
 
-## Credits
+## Créditos
 
-- Bootstrap Template based on [Gentelella](https://github.com/ColorlibHQ/gentelella) by Colorlib
+- Plantilla de Bootstrap basada en [Gentelella](https://github.com/ColorlibHQ/gentelella) de Colorlib
 
 
 
