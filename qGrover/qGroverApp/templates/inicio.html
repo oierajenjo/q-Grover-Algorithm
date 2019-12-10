@@ -1,8 +1,16 @@
-{% extends 'index.html' %}
+{% extends "base_site.html" %}
+
+{% block title %} Demo {% endblock title %}
+
+{% block stylesheets %}
+    {{ block.super }}
+{% endblock stylesheets %}
+
 
 {% block content %}
-<head><h1 >¡Bienvenido a nuestra web!</h1></head>
-<body>
+
+<div class="right_col" role="main" style="min-height: 936px">
+<h1>¡Bienvenido a nuestra web!</h1>
 <blockquote>
 <li> Descubriendo el Algoritmo de Grove</li>
    <br>Se utiliza para la busqueda de secuencias no ordenadas,basicamente nos ayuda a encontrar valores poco frecuentes.</br>Al ser un algoritmo cuantico busca los datos de una manera mas eficiente que los algoritmos tradicionales </p>
@@ -22,9 +30,9 @@
     <a><img src = "/static/build/images/circuito.png" style="width:45%"></a>
 </blockquote>
 
-</body>
+<footer>Grupo 4 Hackathon Bilbo <cite title="Source Title">Grove Algorithm</cite>
+</footer>
 
-
-
+</div>
 
 {% endblock content %}
