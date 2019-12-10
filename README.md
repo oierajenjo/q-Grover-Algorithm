@@ -78,7 +78,7 @@ sudo apt install python3 python3-dev
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repository
 ```sh
 git clone https://github.com/oierajenjo/q-Grover-Algorithm
 ```
