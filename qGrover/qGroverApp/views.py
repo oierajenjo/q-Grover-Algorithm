@@ -14,7 +14,7 @@ import qGroverApp.functions as functions
 # Create your views here.
 
 def inicio(request):
-    return render(request, 'inicio.html')
+    return render(request, 'index.html')
 
 
 def demo(request):
