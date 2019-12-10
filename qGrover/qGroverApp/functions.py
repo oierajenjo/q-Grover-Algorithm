@@ -10,36 +10,39 @@ import matplotlib.pyplot as plt
 # import basic plot tools
 
 def define_circuit(num_qbits, oracle=0):
+    k = 1
+
     # Declaración registros
     qr = QuantumRegister(num_qbits)
     cr = ClassicalRegister(num_qbits)
+    # Si estamos usando más de 3 qbits necesitamos un aux para la gate mct
     if num_qbits > 3:
         aux = QuantumRegister(num_qbits - 3)
         groverCircuit = QuantumCircuit(qr, cr, aux)
     else:
-        aux = QuantumRegister(1)
-        groverCircuit = QuantumCircuit(qr, cr, aux)
+        aux = None
+        groverCircuit = QuantumCircuit(qr, cr)
 
     # Hadamard inicial
     groverCircuit.h(qr)
-    groverCircuit.barrier(qr)
 
-    # Definición del oraculo
+    # Oráculo e inversión de la media
 
-    if oracle != 0: groverCircuit.x(qr[oracle])
-    groverCircuit.h(qr[num_qbits - 1])
-    groverCircuit.mct(qr[0:num_qbits - 1], qr[num_qbits - 1], aux)
-    groverCircuit.h(qr[num_qbits - 1])
-    if oracle != 0:  groverCircuit.x(qr[oracle])
-
-    # Inversión de la media
-
-    round_up = [4, 7, 8]  # En estos casos de qbits se obtiene un mejor resultado redondeando para arriba
-    result = math.pi * math.sqrt((2 ** num_qbits)) / 4
+    result = math.pi * math.sqrt((2 ** num_qbits)/k) / 4  # Cálculo de las iteraciones
     iterations = round(result)
-    if num_qbits in round_up: iterations += 1
+    print("Número de iteraciones %d" % iterations)
 
+    # Añadimos oraculo e inversa de la media por iteración
     for i in range(iterations - 1):  # pi * ((2^n)^(1/2))/ 4
+        groverCircuit.barrier(qr)
+        # Oraculo
+        if oracle != 0: groverCircuit.x(qr[oracle])
+        groverCircuit.h(qr[num_qbits - 1])
+        groverCircuit.mct(qr[0:num_qbits - 1], qr[num_qbits - 1], aux)
+        groverCircuit.h(qr[num_qbits - 1])
+        if oracle != 0: groverCircuit.x(qr[oracle])
+
+        # Inversa de la media
         groverCircuit.barrier(qr)
         groverCircuit.h(qr)
         groverCircuit.x(qr)
