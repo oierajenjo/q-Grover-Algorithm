@@ -28,6 +28,9 @@
 Proyecto de desarrollo y pruebas sobre el rendimiento del algoritmo de Grover
 en comparación con otros algoritmos de búsqueda.
 
+Hay una breve explicación en este "Elevator Pitch" en [PowerPoint](presentacion/pGrover-ElevatorPitch.pptx) 
+o [pdf](presentacion/pGrover-ElevatorPitch.pdf).
+
 ### Construido con
 * [Qiskit](https://qiskit.org/)
 * [Python](https://www.python.org/)
@@ -98,11 +101,17 @@ sudo pip3 install -r requirements.txt
 
 
 <!-- USAGE EXAMPLES -->
-## Uso
+##Uso
+### Demo
 
-Puede ejecutar este sitio como una aplicación normal de Django.
+Puedes ejecutar una Demo interactiva desde la carpeta de [qGrover](qGrover) como una aplicación normal de Django.
 
 _Para más información, consulte la [Documentación Oficial](https://www.djangoproject.com/start/)_
+
+###Rendimiento
+Las gráficas de rendimiento se han conseguido con las herramientas de la carpeta [algorithm_comparison](algorithm_comparison).
+
+Para hacer una prueba, ejecutar el fichero [comparisons.py](algorithm_comparison/comparisons.py).
 
 
 <!-- CONTRIBUTING -->

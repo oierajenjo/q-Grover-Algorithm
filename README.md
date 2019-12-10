@@ -27,6 +27,9 @@
 
 Development and testing project on the performance of Grover's algorithm compared to other search algorithms.
 
+There is a brief explanation in this Elevator Pitch in [PowerPoint](presentacion/pGrover-ElevatorPitch.pptx) 
+or [pdf](presentacion/pGrover-ElevatorPitch.pdf).
+
 ### Built With
 * [Qiskit](https://qiskit.org/)
 * [Python](https://www.python.org/)
@@ -98,11 +101,16 @@ sudo pip3 install -r requirements.txt
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+###Demo
 
-You can run this site as a normal Django app.
+You can run an interactive Demo from the [qGrover](qGrover) folder as a normal Django application.
 
-_For more information, please refer to the [Offical Documentation](https://www.djangoproject.com/start/)_
+Note: _For more information, please refer to the [Offical Documentation](https://www.djangoproject.com/start/)._
 
+###Performance
+The performance graphs have been made with the tools in the [algorithm_comparison](algorithm_comparison) folder.
+
+To make a test, run the file [comparisons.py](algorithm_comparison/comparisons.py).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -152,3 +160,6 @@ the answer to your questions as we did this in a Hackathon and we are not expert
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/badge/License-Apache%202.0-orange.svg
 [license-url]: https://github.com/oierajenjo/q-Grover-Algorithm/blob/master/LICENSE
+
+
+
