@@ -343,4 +343,4 @@ def plot_complexity(n):
 
 
 if __name__ == '__main__':
-    performace(20, iterations)
+    performace(20, 20)
