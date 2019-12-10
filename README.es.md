@@ -36,7 +36,7 @@ en comparación con otros algoritmos de búsqueda.
 <!-- CONTRIBUTORS -->
 ## Colaboradores
 
-Gracias al [personal de apoyo](#acknowledgements) que ayudó con el contenido teórico y con el lenguaje de Qiskit:
+Gracias al [personal de apoyo](#agradecimientos) que ayudó con el contenido teórico y con el lenguaje de Qiskit:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
