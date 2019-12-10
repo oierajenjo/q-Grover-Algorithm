@@ -101,13 +101,13 @@ sudo pip3 install -r requirements.txt
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-###Demo
+### Demo
 
 You can run an interactive Demo from the [qGrover](qGrover) folder as a normal Django application.
 
 Note: _For more information, please refer to the [Offical Documentation](https://www.djangoproject.com/start/)._
 
-###Performance
+### Performance
 The performance graphs have been made with the tools in the [algorithm_comparison](algorithm_comparison) folder.
 
 To make a test, run the file [comparisons.py](algorithm_comparison/comparisons.py).
