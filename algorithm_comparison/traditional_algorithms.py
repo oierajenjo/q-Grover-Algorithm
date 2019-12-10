@@ -3,12 +3,9 @@ import random
 import statistics
 import time
 
-import matplotlib.pyplot as plt
 import progressbar
 
-import utils
-
-ITERATIONS = 4000
+from algorithm_comparison import utils
 
 
 def LinearSearch(lys, element):
@@ -164,16 +161,26 @@ def InterpolationSearch(lys, val):
 
             # If x is larger, x is in upper part
         if lys[pos] < val:
-            lo = pos + 1;
+            lo = pos + 1
 
             # If x is smaller, x is in lower part
         else:
-            hi = pos - 1;
+            hi = pos - 1
 
     return -1
 
 
-def performace(n):
+def test_algorithm(number_list, value, algorithm):
+    start_time = time.time()
+    steps = algorithm(number_list, value)
+
+    return {
+        "time": (time.time() - start_time) * 1000,
+        "steps": steps
+    }
+
+
+def performace(n, iterations):
     linear_steps = []
     binary_steps = []
     jump_steps = []
@@ -192,7 +199,7 @@ def performace(n):
 
         print("N = %s" % i)
 
-        bar = progressbar.ProgressBar(max_value=ITERATIONS)
+        bar = progressbar.ProgressBar(max_value=iterations)
 
         temp_linear_steps = []
         temp_binary_steps = []
@@ -208,38 +215,40 @@ def performace(n):
         temp_inter_time = []
         temp_exponential_time = []
 
-        for j in range(0, ITERATIONS):
+        for j in range(0, iterations):
             done = False
 
             while not done:
 
+                # TODO sometimes Interpolation search fails
                 try:
+
                     number_list = utils.random_list(2 ** i)
                     value = number_list[random.randint(0, 2 ** i)]
 
-                    start_time = time.time()
-                    temp_linear_steps.append(LinearSearch(number_list, value))
-                    temp_linear_time.append((time.time() - start_time) * 1000)
+                    data = test_algorithm(number_list, value, LinearSearch)
+                    temp_linear_steps.append(data["steps"])
+                    temp_linear_time.append(data["time"])
 
-                    start_time = time.time()
-                    temp_binary_steps.append(BinarySearch(number_list, value))
-                    temp_binary_time.append((time.time() - start_time) * 1000)
+                    data = test_algorithm(number_list, value, BinarySearch)
+                    temp_binary_steps.append(data["steps"])
+                    temp_binary_time.append(data["time"])
 
-                    start_time = time.time()
-                    temp_jump_steps.append(JumpSearch(number_list, value))
-                    temp_jump_time.append((time.time() - start_time) * 1000)
+                    data = test_algorithm(number_list, value, JumpSearch)
+                    temp_jump_steps.append(data["steps"])
+                    temp_jump_time.append(data["time"])
 
-                    start_time = time.time()
-                    temp_fib_steps.append(FibonacciSearch(number_list, value))
-                    temp_fib_time.append((time.time() - start_time) * 1000)
+                    data = test_algorithm(number_list, value, FibonacciSearch)
+                    temp_fib_steps.append(data["steps"])
+                    temp_fib_time.append(data["time"])
 
-                    start_time = time.time()
-                    temp_inter_steps.append(InterpolationSearch(number_list, value))
-                    temp_inter_time.append((time.time() - start_time) * 1000)
+                    data = test_algorithm(number_list, value, InterpolationSearch)
+                    temp_inter_steps.append(data["steps"])
+                    temp_inter_time.append(data["time"])
 
-                    start_time = time.time()
-                    temp_exponential_steps.append(ExponentialSearch(number_list, value))
-                    temp_exponential_time.append((time.time() - start_time) * 1000)
+                    data = test_algorithm(number_list, value, ExponentialSearch)
+                    temp_exponential_steps.append(data["steps"])
+                    temp_exponential_time.append(data["time"])
 
                     done = True
                     bar.update(j)
@@ -265,78 +274,73 @@ def performace(n):
         exponential_steps.append(statistics.mean(temp_exponential_steps))
         exponential_time.append(statistics.mean(temp_exponential_time))
 
+    return {
+        "linear": {
+            "steps": linear_steps,
+            "time": linear_time,
+        },
+        "binary": {
+            "steps": binary_steps,
+            "time": binary_time,
+        },
+        "jump": {
+            "steps": jump_steps,
+            "time": jump_time,
+        },
+        "fibonacci": {
+            "steps": fib_steps,
+            "time": fib_time,
+        },
+        "interpolation": {
+            "steps": inter_steps,
+            "time": inter_time,
+        },
+        "exponential": {
+            "steps": exponential_steps,
+            "time": exponential_time,
+        }
+    }
+
+
+def plot_complexity(n):
+    data = performace(n)
+
     time_comp = []
     for i in range(0, n):
         time_comp.append(2 ** i)
 
-    plot("Linear Search", linear_steps, time_comp, "steps", n)
+    utils.plot("Linear Search", data["linear"]["steps"], time_comp, n)
 
     time_comp = [0]
     for i in range(1, n):
         time_comp.append(math.log(2 ** i, 10))
 
-    plot("Binary Search", binary_steps, time_comp, "steps", n)
+    utils.plot("Binary Search", data["binary"]["steps"], time_comp, n)
 
     time_comp = [0]
     for i in range(1, n):
         time_comp.append(math.sqrt(2 ** i))
 
-    plot("Jump Search", jump_steps, time_comp, "steps", n)
+    utils.plot("Jump Search", data["jump"]["steps"], time_comp, n)
 
     time_comp = [0]
     for i in range(1, n):
         time_comp.append(math.log(2 ** i, 10))
 
-    plot("Fibonacci Search", fib_steps, time_comp, "steps", n)
+    utils.plot("Fibonacci Search", data["fibonacci"]["steps"], time_comp, n)
 
     time_comp = [0, 0]
     for i in range(2, n):
         time_comp.append(math.log(math.log(2 ** i, 10), 10))
 
-    plot("Interpolation Search", inter_steps, time_comp, "steps", n)
+    utils.plot("Interpolation Search", data["interpolation"]["steps"], time_comp, n)
 
     time_comp = [0]
     for i in range(1, n):
         time_comp.append(math.log(2 ** i, 10))
 
-    plot("Exponential Search", exponential_steps, time_comp, "steps", n)
-
-    # plot("Linear Search", linear_time, "microseconds", n)
-    # plot("Binary Search", binary_time, "microseconds", n)
-    # plot("Jump Search", jump_time, "microseconds", n)
-    # plot("Fibonacci Search", fib_time, "microseconds", n)
-    # plot("Interpolation Search", inter_time, "microseconds", n)
-    # plot("Exponential Search", exponential_time, "microseconds", n)
-
-
-def plot(title, data, time_comp, label, n):
-    numbers = []
-
-    for i in range(0, n):
-        numbers.append(2 ** i)
-
-    # plt.plot(numbers, data)
-    # plt.ylabel(label)
-    # plt.xlabel('n')
-    #
-    # plt.title(title)
-    # plt.show()
-
-    x = data
-    y = time_comp
-
-    fig, ax = plt.subplots()
-    plt.title(title)
-
-    # Using set_dashes() to modify dashing of an existing line
-    line1, = ax.plot(numbers, data, label='steps')
-
-    # Using plot(..., dashes=...) to set the dashing when creating a line
-    line2, = ax.plot(numbers, time_comp, dashes=[6, 2], label='time complexity')
-
-    ax.legend()
-    plt.show()
+    utils.plot("Exponential Search", data["exponential"]["steps"], time_comp, n)
 
 
 if __name__ == '__main__':
-    performace(20)
+    performace(20, iterations)
