@@ -147,8 +147,8 @@ def InterpolationSearch(lys, val):
 
         if lo == hi:
             if lys[lo] == val:
-                return lo;
-            return -1;
+                return lo
+            return -1
 
             # Probing the position with keeping
         # uniform distribution in mind.

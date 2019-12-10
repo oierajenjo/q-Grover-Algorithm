@@ -9,18 +9,24 @@ def GroverSteps(n):
     return steps
 
 
+def GroverStepsMultiple(n, k):
+    steps = math.pi * math.sqrt((2 ** n) / k) / 4
+
+    return steps
+
+
 if __name__ == '__main__':
 
     steps = []
     numbers = []
 
-    for i in range(0, 20):
-        steps.append(GroverSteps(i))
-        numbers.append(2 ** i)
+    for i in range(1, 100):
+        steps.append(GroverStepsMultiple(20, i))
+        numbers.append(i)
 
     plt.plot(numbers, steps)
     plt.ylabel("pasos")
-    plt.xlabel('n')
+    plt.xlabel('numero de variables')
 
-    plt.title("Grover")
+    plt.title("Grover (n = 20)")
     plt.show()

@@ -14,9 +14,43 @@ def compare(n, iterations):
     data = traditional_algorithms.performace(n, iterations)
 
     fig, ax = plt.subplots()
-    plt.title("Algorithm Comparison")
+    plt.title("Comparación de Algoritmos")
 
     ax.plot(numbers, grover_steps, label='grover')
+    ax.plot(numbers, data["linear"]["steps"], label='linear')
+    ax.plot(numbers, data["binary"]["steps"], label='binary')
+    ax.plot(numbers, data["jump"]["steps"], label='jump')
+    ax.plot(numbers, data["fibonacci"]["steps"], label='fibonacci')
+    ax.plot(numbers, data["interpolation"]["steps"], label='interpolation')
+    ax.plot(numbers, data["exponential"]["steps"], label='exponential')
+
+    plt.ylabel("pasos")
+    plt.xlabel('numero de valores')
+
+    ax.legend()
+    plt.show()
+
+    fig, ax = plt.subplots()
+    plt.title("Comparación de Algoritmos")
+
+    ax.plot(numbers, grover_steps, label='grover')
+    # ax.plot(numbers, data["linear"]["steps"], label='linear')
+    ax.plot(numbers, data["binary"]["steps"], label='binary')
+    ax.plot(numbers, data["jump"]["steps"], label='jump')
+    ax.plot(numbers, data["fibonacci"]["steps"], label='fibonacci')
+    ax.plot(numbers, data["interpolation"]["steps"], label='interpolation')
+    ax.plot(numbers, data["exponential"]["steps"], label='exponential')
+
+    plt.ylabel("pasos")
+    plt.xlabel('numero de valores')
+
+    ax.legend()
+    plt.show()
+
+    fig, ax = plt.subplots()
+    plt.title("Comparación de Algoritmos")
+
+    # ax.plot(numbers, grover_steps, label='grover')
     # ax.plot(numbers, data["linear"]["steps"], label='linear')
     ax.plot(numbers, data["binary"]["steps"], label='binary')
     # ax.plot(numbers, data["jump"]["steps"], label='jump')
@@ -24,9 +58,11 @@ def compare(n, iterations):
     ax.plot(numbers, data["interpolation"]["steps"], label='interpolation')
     ax.plot(numbers, data["exponential"]["steps"], label='exponential')
 
+    plt.ylabel("pasos")
+    plt.xlabel('numero de valores')
+
     ax.legend()
     plt.show()
 
-
 if __name__ == '__main__':
-    compare(20, 20)
+    compare(10, 10)
