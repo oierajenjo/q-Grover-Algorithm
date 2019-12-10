@@ -1,0 +1,117 @@
+{% extends "base_site.html" %}
+
+{% block title %} Demo {% endblock title %}
+
+{% load static %}
+
+{% block stylesheets %}
+    {{ block.super }}
+{% endblock stylesheets %}
+
+
+
+{% block content %}
+    <div class="right_col" role="main" style="min-height: 936px">
+        <div class="">
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>Groove Demo</h3>
+                </div>
+                <div class="title_right">
+                    <div class="col-md-5 col-sm-5  form-group pull-right top_search">
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 ">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Configuración</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li></li>
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <br>
+                            <div class="form-horizontal form-label-left">
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                           for="qubits">Qubits</label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input type="number" id="qubits" min="2" max="9" value="4" required="required"
+                                               class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="oracle">Definición
+                                        Oraculo</label>
+                                    <div class="col-md-6 col-sm-6 ">
+                                        <input type="number" id="oracle" min="0" max="8" value="3" required="required"
+                                               class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="ln_solid"></div>
+                                <div class="item form-group">
+                                    <div class="col-md-6 col-sm-6 offset-md-3">
+                                        <a target="_" href="https://github.com/oierajenjo/q-Grover-Algorithm/blob/master/Grover_algorithm.ipynb" class="btn btn-primary" type="button">Ver fuente</a>
+                                        <button class="btn btn-success" onclick="displayChart()">Probar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Resultado</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li></li>
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <img style="display: block; margin-left: auto;margin-right: auto;"
+                             src="{% static "/img/blank.png" %}"
+                             id="img-chart" alt="Chart">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
+{% block javascripts %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        function displayChart() {
+
+            var qubits = document.getElementById("qubits").value;
+
+            var oracle = document.getElementById("oracle").value;
+
+            if (oracle >= qubits) {
+                alert("El valor de oracle debe ser menor que el de qubits");
+            } else {
+                $('#img-chart').attr('src', '{% url "ajax_bar_chart" %}?oracle=' + oracle + '&qubics=' + qubits);
+            }
+
+        }
+    </script>
+    {{ block.super }}
+{% endblock javascripts %}
