@@ -20,5 +20,6 @@ import qGroverApp.views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name="Inicio"),
-    path('demo/', views.demo, name="Demo")
+    path('demo/', views.demo, name="Demo"),
+    path('ajax/bar_chart', views.ajax_bar_chart, name="ajax_bar_chart")
 ]

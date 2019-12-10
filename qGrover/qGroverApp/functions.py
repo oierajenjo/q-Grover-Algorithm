@@ -1,9 +1,11 @@
 # importing Qiskit
+import io
 import math
 
 from qiskit import BasicAer
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute
-
+from qiskit.visualization import plot_histogram
+import matplotlib.pyplot as plt
 
 # import basic plot tools
 
@@ -52,7 +54,19 @@ def define_circuit(num_qbits, oracle=0):
     backend = BasicAer.get_backend('qasm_simulator')
     shots = 5000
     results = execute(groverCircuit, backend=backend, shots=shots).result()
+
     answer = results.get_counts()
     for k in answer.keys():
         answer[k] = answer[k] / shots
+
+    print(answer)
+
     return answer
+
+def pltToSvg():
+    buf = io.BytesIO()
+    plt.savefig(buf, format='svg', bbox_inches='tight')
+    s = buf.getvalue()
+    buf.close()
+    return s
+
