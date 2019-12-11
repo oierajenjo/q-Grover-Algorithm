@@ -25,11 +25,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Development and testing project on the performance of Grover's algorithm compared to other search algorithms.
+Development and testing project on the performance of Grover's algorithm compared to other search algorithms, this project was developed during the [Qiskit Hackathon Bilbao 2019](https://github.com/qiskit-community/qiskit-hackathon-bilbao-19).
 
 There is a brief explanation in this Elevator Pitch in [PowerPoint](presentacion/pGrover-ElevatorPitch.pptx) 
 or [pdf](presentacion/pGrover-ElevatorPitch.pdf).
 
+**Update:** we won [second place](https://www.ilb.eus/es/bilbao-quantum-computing-hackathon-2019/) in our category :D
 ### Built With
 * [Qiskit](https://qiskit.org/)
 * [Python](https://www.python.org/)
