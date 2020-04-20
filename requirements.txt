@@ -1,5 +1,4 @@
 progressbar2
 matplotlib
-matplotlib
 Django
 qiskit
